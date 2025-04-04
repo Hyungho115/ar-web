@@ -1,40 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR Experience</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/dist/mindar-image.prod.js"></script>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/dist/mindar-image.aframe.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>AR 체험</h1>
-            <p>이미지를 스캔하여 AR을 경험해보세요</p>
-        </div>
-
-        <div class="ar-container">
-            <a-scene mindar-image="imageTargetSrc: targets.mind; autoStart: true;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
-                <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-                <a-entity mindar-image-target="targetIndex: 0">
-                    <a-gltf-model
-                        src="mango.glb"
-                        position="0 0 0"
-                        scale="0.1 0.1 0.1"
-                        rotation="0 0 0"
-                        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
-                    </a-gltf-model>
-                </a-entity>
-            </a-scene>
-        </div>
-
-        <div class="target-image">
-            <h2>스캔할 이미지</h2>
-            <img src="target.png" alt="트래킹 이미지">
-        </div>
-    </div>
-    <script src="script.js"></script>
+    <a-scene mindar-image="imageTargetSrc: ./targets.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+        <a-entity mindar-image-target="targetIndex: 0">
+            <a-plane color="blue" opacity="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+        </a-entity>
+    </a-scene>
 </body>
-</html> 
+</html>
