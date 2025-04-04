@@ -18,12 +18,12 @@
         
         <div class="ar-section">
             <h2>AR 체험하기</h2>
-            <div class="ar-container">
-                <a-scene mindar-image="imageTargetSrc: target.mind; autoStart: true;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+            <div class="ar-container" id="ar-container">
+                <a-scene mindar-image="imageTargetSrc: targets.mind; autoStart: false;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
                     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
                     <a-entity mindar-image-target="targetIndex: 0">
                         <a-gltf-model
-                            src="model.glb"
+                            src="mango.glb"
                             position="0 0 0"
                             scale="0.1 0.1 0.1"
                             rotation="0 0 0"
@@ -32,11 +32,16 @@
                     </a-entity>
                 </a-scene>
             </div>
+            <div class="ar-controls">
+                <button id="start-ar" class="ar-button">AR 시작하기</button>
+                <button id="stop-ar" class="ar-button" style="display: none;">AR 중지하기</button>
+            </div>
         </div>
 
         <div class="instructions">
             <h2>사용 방법</h2>
             <ol>
+                <li>AR 시작하기 버튼을 클릭하세요</li>
                 <li>카메라 권한을 허용해주세요</li>
                 <li>아래 이미지를 카메라에 비춰주세요</li>
                 <li>AR 콘텐츠를 즐겨보세요!</li>

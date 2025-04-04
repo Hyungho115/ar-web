@@ -183,4 +183,30 @@ footer {
 .target-image p {
     color: #666;
     font-size: 0.9em;
+}
+
+.ar-controls {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.ar-button {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.ar-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.ar-button:active {
+    transform: translateY(0);
 } 
