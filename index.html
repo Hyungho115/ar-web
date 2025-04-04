@@ -12,17 +12,20 @@
     <div class="container">
         <div class="header">
             <h1>AR Experience</h1>
-            <p>이미지를 스캔하여 AR 콘텐츠를 경험해보세요!</p>
+            <p class="subtitle">증강현실로 새로운 경험을 시작하세요</p>
         </div>
         
-        <div class="ar-container">
-            <a-scene mindar-image="imageTargetSrc: target.mind; autoStart: true;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
-                <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-                <a-entity mindar-image-target="targetIndex: 0">
-                    <!-- 여기에 3D 모델이 추가될 예정입니다 -->
-                    <a-text value="AR 콘텐츠 준비 중" position="0 0 0" color="white" align="center"></a-text>
-                </a-entity>
-            </a-scene>
+        <div class="ar-section">
+            <h2>AR 체험하기</h2>
+            <div class="ar-container">
+                <a-scene mindar-image="imageTargetSrc: target.mind; autoStart: true;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+                    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+                    <a-entity mindar-image-target="targetIndex: 0">
+                        <!-- 여기에 3D 모델이 추가될 예정입니다 -->
+                        <a-text value="AR 콘텐츠 준비 중" position="0 0 0" color="white" align="center"></a-text>
+                    </a-entity>
+                </a-scene>
+            </div>
         </div>
 
         <div class="instructions">
@@ -33,6 +36,37 @@
                 <li>AR 콘텐츠를 즐겨보세요!</li>
             </ol>
         </div>
+
+        <div class="features">
+            <h2>주요 기능</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>이미지 트래킹</h3>
+                    <p>특정 이미지를 인식하여 AR 콘텐츠를 표시합니다</p>
+                </div>
+                <div class="feature-card">
+                    <h3>3D 모델 표시</h3>
+                    <p>실제 환경에 3D 모델을 오버레이하여 표시합니다</p>
+                </div>
+                <div class="feature-card">
+                    <h3>모바일 지원</h3>
+                    <p>스마트폰에서도 쉽게 AR을 체험할 수 있습니다</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="coming-soon">
+            <h2>준비 중인 콘텐츠</h2>
+            <ul>
+                <li>다양한 3D 모델</li>
+                <li>인터랙티브 요소</li>
+                <li>애니메이션 효과</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>© 2024 AR Experience. All rights reserved.</p>
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>
