@@ -166,4 +166,21 @@ footer {
     .header h1 {
         font-size: 2em;
     }
+}
+
+.target-image {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.target-image img {
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+
+.target-image p {
+    color: #666;
+    font-size: 0.9em;
 } 
