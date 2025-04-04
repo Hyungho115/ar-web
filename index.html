@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Experience</title>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.4/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AR Experience</h1>
+            <p>이미지를 스캔하여 AR 콘텐츠를 경험해보세요!</p>
+        </div>
+        
+        <div class="ar-container">
+            <a-scene mindar-image="imageTargetSrc: target.mind; autoStart: true;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+                <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+                <a-entity mindar-image-target="targetIndex: 0">
+                    <!-- 여기에 3D 모델이 추가될 예정입니다 -->
+                    <a-text value="AR 콘텐츠 준비 중" position="0 0 0" color="white" align="center"></a-text>
+                </a-entity>
+            </a-scene>
+        </div>
+
+        <div class="instructions">
+            <h2>사용 방법</h2>
+            <ol>
+                <li>카메라 권한을 허용해주세요</li>
+                <li>트래킹할 이미지를 카메라에 비춰주세요</li>
+                <li>AR 콘텐츠를 즐겨보세요!</li>
+            </ol>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
