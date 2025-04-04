@@ -1,0 +1,179 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v5.2.cf7d3637)"
+    },
+    "extensionsUsed": [
+        "KHR_materials_specular",
+        "KHR_materials_volume",
+        "KHR_materials_ior",
+        "FB_ngon_encoding"
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 59598,
+            "type": "VEC3",
+            "max": [
+                10.587774276733399,
+                9.701009750366211,
+                8.407702445983887
+            ],
+            "min": [
+                -14.008211135864258,
+                0.0,
+                -12.639966011047364
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 59598,
+            "type": "VEC3",
+            "max": [
+                0.9999853372573853,
+                0.9999992251396179,
+                0.9994133710861206
+            ],
+            "min": [
+                -0.9998366236686707,
+                -0.9999409914016724,
+                -0.999808132648468
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 59598,
+            "type": "VEC2",
+            "max": [
+                0.9970870018005371,
+                0.9937390089035034
+            ],
+            "min": [
+                0.0040339999832212929,
+                0.002593994140625
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 59598,
+            "type": "SCALAR",
+            "max": [
+                59597
+            ],
+            "min": [
+                0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 2145528,
+            "uri": "result.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 715176,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 715176,
+            "byteLength": 715176,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 1430352,
+            "byteLength": 476784,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 1907136,
+            "byteLength": 238392,
+            "target": 34963
+        }
+    ],
+    "materials": [
+        {
+            "name": "mango_087_Mat",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.6000000238418579,
+                    0.6000000238418579,
+                    0.6000000238418579,
+                    1.0
+                ],
+                "metallicFactor": 0.0
+            },
+            "extensions": {
+                "KHR_materials_specular": {
+                    "specularFactor": 1.0,
+                    "specularColorFactor": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "KHR_materials_ior": {
+                    "ior": 1.0
+                }
+            }
+        },
+        {
+            "name": "material"
+        }
+    ],
+    "meshes": [
+        {
+            "name": "mango_087",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 3,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "mango_087.obj",
+            "children": [
+                1,
+                2
+            ]
+        },
+        {
+            "name": "default"
+        },
+        {
+            "name": "mango_087",
+            "mesh": 0
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0
+}
