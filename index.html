@@ -6,82 +6,34 @@
     <title>AR Experience</title>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.4/dist/mindar-image.prod.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>AR Experience</h1>
-            <p class="subtitle">증강현실로 새로운 경험을 시작하세요</p>
-        </div>
-        
-        <div class="ar-section">
-            <h2>AR 체험하기</h2>
-            <div class="ar-container" id="ar-container">
-                <a-scene mindar-image="imageTargetSrc: targets.mind; autoStart: false;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
-                    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-                    <a-entity mindar-image-target="targetIndex: 0">
-                        <a-gltf-model
-                            src="mango.glb"
-                            position="0 0 0"
-                            scale="0.1 0.1 0.1"
-                            rotation="0 0 0"
-                            animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
-                        </a-gltf-model>
-                    </a-entity>
-                </a-scene>
-            </div>
-            <div class="ar-controls">
-                <button id="start-ar" class="ar-button">AR 시작하기</button>
-                <button id="stop-ar" class="ar-button" style="display: none;">AR 중지하기</button>
-            </div>
+            <h1>AR 체험</h1>
+            <p>이미지를 스캔하여 AR을 경험해보세요</p>
         </div>
 
-        <div class="instructions">
-            <h2>사용 방법</h2>
-            <ol>
-                <li>AR 시작하기 버튼을 클릭하세요</li>
-                <li>카메라 권한을 허용해주세요</li>
-                <li>아래 이미지를 카메라에 비춰주세요</li>
-                <li>AR 콘텐츠를 즐겨보세요!</li>
-            </ol>
-            <div class="target-image">
-                <img src="target.png" alt="트래킹 이미지">
-                <p>이 이미지를 카메라에 비춰주세요</p>
-            </div>
+        <div class="ar-container">
+            <a-scene mindar-image="imageTargetSrc: targets.mind; autoStart: true;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+                <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+                <a-entity mindar-image-target="targetIndex: 0">
+                    <a-gltf-model
+                        src="mango.glb"
+                        position="0 0 0"
+                        scale="0.1 0.1 0.1"
+                        rotation="0 0 0"
+                        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+                    </a-gltf-model>
+                </a-entity>
+            </a-scene>
         </div>
 
-        <div class="features">
-            <h2>주요 기능</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h3>이미지 트래킹</h3>
-                    <p>특정 이미지를 인식하여 AR 콘텐츠를 표시합니다</p>
-                </div>
-                <div class="feature-card">
-                    <h3>3D 모델 표시</h3>
-                    <p>실제 환경에 3D 모델을 오버레이하여 표시합니다</p>
-                </div>
-                <div class="feature-card">
-                    <h3>모바일 지원</h3>
-                    <p>스마트폰에서도 쉽게 AR을 체험할 수 있습니다</p>
-                </div>
-            </div>
+        <div class="target-image">
+            <h2>스캔할 이미지</h2>
+            <img src="target.png" alt="트래킹 이미지">
         </div>
-
-        <div class="coming-soon">
-            <h2>준비 중인 콘텐츠</h2>
-            <ul>
-                <li>다양한 3D 모델</li>
-                <li>인터랙티브 요소</li>
-                <li>애니메이션 효과</li>
-            </ul>
-        </div>
-
-        <footer>
-            <p>© 2024 AR Experience. All rights reserved.</p>
-        </footer>
     </div>
     <script src="script.js"></script>
 </body>

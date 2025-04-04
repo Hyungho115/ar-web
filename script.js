@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const scene = document.querySelector('a-scene');
     const startButton = document.getElementById('start-ar');
     const stopButton = document.getElementById('stop-ar');
-    const arContainer = document.getElementById('ar-container');
     
     // AR 시작 버튼 클릭 이벤트
     startButton.addEventListener('click', async () => {
@@ -16,10 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // 버튼 상태 변경
             startButton.style.display = 'none';
             stopButton.style.display = 'inline-block';
-            
-            console.log('AR 세션이 시작되었습니다.');
         } catch (error) {
-            console.error('카메라 접근 권한을 얻을 수 없습니다:', error);
             alert('카메라 접근 권한이 필요합니다. 브라우저 설정에서 카메라 권한을 허용해주세요.');
         }
     });
@@ -32,10 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // 버튼 상태 변경
         startButton.style.display = 'inline-block';
         stopButton.style.display = 'none';
-        
-        console.log('AR 세션이 중지되었습니다.');
     });
-    
+
     // AR 세션이 시작될 때 실행되는 이벤트
     scene.addEventListener('arReady', (event) => {
         console.log('AR 세션이 준비되었습니다.');
