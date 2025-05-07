@@ -4,6 +4,36 @@
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <script src="config.js"></script>
+    <script>
+      window.addEventListener('load', function() {
+        const sceneEl = document.querySelector('a-scene');
+        const videoEl = document.querySelector('#video');
+        const arSystem = sceneEl.systems["mindar-image-system"];
+        
+        // 비디오 URL 설정
+        videoEl.src = config.videoUrl;
+        
+        sceneEl.addEventListener('arReady', function() {
+          console.log('AR Ready');
+        });
+
+        sceneEl.addEventListener('targetFound', function() {
+          console.log('Target Found');
+          videoEl.play();
+        });
+
+        sceneEl.addEventListener('targetLost', function() {
+          console.log('Target Lost');
+          videoEl.pause();
+        });
+
+        // 모바일에서 사용자 인터랙션 필요
+        document.body.addEventListener('click', function() {
+          videoEl.play();
+        });
+      });
+    </script>
   </head>
   <body>
     <a-scene mindar-image="imageTargetSrc: ./targets.mind; autoStart: true;" 
@@ -13,7 +43,12 @@
              device-orientation-permission-ui="enabled: false">
       <a-assets>
         <img id="mango" src="mango.jpg" />
-        <video id="video" src="https://github.com/Hyungho115/ar-web/raw/main/video.mp4" loop="true" autoplay="true" playsinline="true"></video>
+        <video id="video" 
+               preload="auto"
+               muted
+               crossorigin="anonymous"
+               loop="true" 
+               playsinline="true"></video>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
